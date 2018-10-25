@@ -31,6 +31,7 @@ end = input()
 #end = end - 4.00
 
 if (logger == '1' and aggregator == '0'):
+
      print("REPORT EXCEL NOTE---->in site data \n")
      print("Alert Generation time: " +agt+
         "\nData flow visibility interruption time in ES: "+start+ "-"+end+
@@ -43,16 +44,15 @@ if (logger == '1' and aggregator == '0'):
           "\nContainer Aggregator  was up and running")
 
 if(logger == '0' and aggregator == '1'):
-    print("REPORT EXCEL NOTE---->in site data \n")
-    print("Alert Generation time: " +agt+
-        "\nData flow visibility interruption time in ES: "+start+ "-"+end+
-        "\nContainer logger  was up and running")
+
     print("\nREPORT EXCEL NOTE---->in missing Total And Fleeet Data\n")
     print("Alert Generation time :  " + agt +
           "\nData flow visibility interruption time in ES: "+ start + "-" + end +
           "\nContainer Aggregator  has been restarted via resin and data flow was visible."+
           "\nNo. of logs in the rabbitmq queue: "+a_l+
           "\nRabbitmq queue size is decreasing") 
+
+######  never happens .... but for extreme cases
 
 if(logger == '1' and aggregator == '1'):
     print("REPORT EXCEL NOTE---->in site data \n")
@@ -67,9 +67,13 @@ if(logger == '1' and aggregator == '1'):
           "\nContainer Aggregator  has been restarted via resin and data flow was visible."+
           "\nNo. of logs in the rabbitmq queue: "+a_l+
           "\nRabbitmq queue size is decreasing")
+
+
 #alert note in ops genie
+
 print("\n\n")
 if (logger == '1' and aggregator == '0'):
+
     print("OPS-GENIE NOTE---->in site data tab\n")
     print("Data flow visibility interruption time in ES: " + start + "-" + end +
           "\nContainer logger has been restarted via resin and data flow was visible." +
@@ -80,9 +84,7 @@ if (logger == '1' and aggregator == '0'):
           "\nContainer Aggregator  was up and running")
 
 if (logger == '0' and aggregator == '1'):
-    print("OPS-GENIE NOTE---->in site data tab\n")
-    print("Data flow visibility interruption time in ES: " + start + "-" + end +
-          "\nContainer logger  was up and running")
+
     print("\nOPS-GENIE NOTE---->in missing Total And Fleeet Data\n")
     print("Alert Generation time :  " + agt +
           "\nData flow visibility interruption time in ES: " + start + "-" + end +
@@ -90,14 +92,4 @@ if (logger == '0' and aggregator == '1'):
           "\nNo. of logs in the rabbitmq queue: " + a_l +
           "\nRabbitmq queue size is decreasing")
 
-if (logger == '1' and aggregator == '1'):
-    print("OPS-GENIE NOTE---->in site data tab\n")
-    print("Data flow visibility interruption time in ES: " + start + "-" + end +
-          "\nContainer logger has been restarted via resin and data flow was visible." +
-          "\nNo. of logs in the rabbitmq queue: " + l_l +
-          "\nRabbitmq queue size is decreasing")
-    print("\nOPS-GENIE NOTE---->in missing Total And Fleeet Data\n")
-    print("Data flow visibility interruption time in ES: " + start + "-" + end +
-          "\nContainer Aggregator  has been restarted via resin and data flow was visible." +
-          "\nNo. of logs in the rabbitmq queue: " + a_l +
-          "\nRabbitmq queue size is decreasing")
+
